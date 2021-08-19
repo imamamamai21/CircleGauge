@@ -1,0 +1,5 @@
+# 設定ファイル
+
+# 環境
+PUBLIC_URL="."
+REACT_APP_ENVIROMENT="dev"

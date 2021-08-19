@@ -1,0 +1,64 @@
+{
+  "name": "ext-base",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@testing-library/jest-dom": "5.14.1",
+    "@testing-library/react": "11.2.7",
+    "@testing-library/user-event": "12.8.3",
+    "@types/jest": "26.0.24",
+    "@types/node": "12.20.19",
+    "@types/react": "17.0.17",
+    "@types/react-dom": "17.0.9",
+    "axios": "0.21.1",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "react-scripts": "4.0.3",
+    "styled-components": "5.3.0",
+    "typescript": "4.3.5",
+    "web-vitals": "1.1.2"
+  },
+  "scripts": {
+    "dev": "npm run env-delete && npm run env-local && react-scripts start",
+    "env-local": "cp env/local .env",
+    "env:dev": "cp env/dev .env",
+    "env:pre": "cp env/pre .env",
+    "env:prd": "cp env/prd .env",
+    "env-delete": "touch .env && rm -r .env",
+    "create-zip:dev": "rm -rf export/dev.zip && zip -r export/dev.zip export/dev",
+    "create-zip:pre": "rm -rf export/pre.zip && zip -r export/pre.zip export/pre",
+    "create-zip:prd": "rm -rf export/production.zip && zip -r export/production.zip export/production",
+    "build:dev": "npm run env-delete && npm run env:dev && react-scripts build && mkdir -p export/dev && rm -r export/dev && mv build export/dev && npm run create-zip:dev",
+    "build:pre": "npm run env-delete && npm run env:pre && react-scripts build && mkdir -p export/pre && rm -r export/pre && mv build export/pre && npm run create-zip:pre",
+    "build:prd": "npm run env-delete && npm run env:prd && GENERATE_SOURCEMAP=false react-scripts build && mkdir -p export/production && rm -r export/production && mv build export/production && npm run create-zip:prd",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true,
+    "tabWidth": 2,
+    "trailingComma": "all"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@types/styled-components": "^5.1.12"
+  }
+}

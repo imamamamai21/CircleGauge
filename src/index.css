@@ -1,0 +1,32 @@
+html {
+  height: 100%;
+}
+body {
+  margin: 0;
+  height: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Arial, ヒラギノ角ゴ ProN W3, Hiragino Kaku Gothic ProN, メイリオ, Meiryo, sans-serif;
+}
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.is-windows::-webkit-scrollbar, .is-windows *::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
+}
+
+.is-windows::-webkit-scrollbar-thumb, .is-windows *::-webkit-scrollbar-thumb {
+  border: solid 1px rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.is-windows::-webkit-scrollbar-corner, .is-windows *::-webkit-scrollbar-corner {
+  display: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  text-transform: none;
+}
