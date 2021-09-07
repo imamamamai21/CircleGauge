@@ -1,6 +1,11 @@
 # CIRCLE GAUGE
 
-丸いゲージを作成しています。
+丸いゲージです。
+
+↓2秒に7%ずつ増えるサンプルです。
+色の変更・サブポイントの追加ができます。
+
+![result](https://github.com/imamamamai21/CircleGauge/blob/master/sumple/circlegauge.gif)
 
 ## SKILLS
 ### フロントエンド
