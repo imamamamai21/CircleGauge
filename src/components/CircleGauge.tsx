@@ -152,19 +152,19 @@ const CircleGauge: React.FC<ICircleGauge> = ({
       <CyrcleStroke alt='circleStroke' src={ png || '' } />
       <RateText
         style={ { color: overedMax ? enabledTextColor : disabledTextColor } }>
-        { percent }
+        { percent > 999 ? 999 : percent }
         <ParsentText>%</ParsentText>
       </RateText>
       { points?.map(point => renderPoint(point)) }
       { !overedMax && currentCircle }
       <TotalText
         style={ { color: overedMax ? enabledTextColor : disabledTextColor } }>
-        { totalYells.toLocaleString() }エール
+        { totalYells.toLocaleString() }
       </TotalText>
-      {/* <AchievementText
+      <AchievementText
         style={ { color: overedMax ? notAchievementColor : disabledTextColor } }>
         達成率
-      </AchievementText> */}
+      </AchievementText>
     </Warapper>
   )
 }
@@ -197,19 +197,19 @@ const CyrcleStroke = styled.img`
 
 const PointBox = styled.div`
   position: absolute;
-  transition: transform 100ms ease;
+  transition: transform 200ms ease;
 `
 
 const CurrentCyrcle = styled.div`
   border-radius: 50%;
 `
 
-// const AchievementText = styled.p`
-//   font-size: 0.8rem;
-//   position: absolute;
-//   top: 0.4rem;
-//   left: 1.4rem;
-// `
+const AchievementText = styled.p`
+  font-size: 0.8rem;
+  position: absolute;
+  top: 0.2rem;
+  left: 1.4rem;
+`
 
 const TotalText = styled.p`
   font-size: 0.8rem;

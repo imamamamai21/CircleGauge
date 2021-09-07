@@ -16,7 +16,7 @@ const MainPage: React.FC = () => {
   React.useEffect(() => {
     const interval = setInterval(() => {
       setPercent(p => p + 11)
-    }, 5000)
+    }, 2000)
     return () => clearInterval(interval)
   }, [])
   return (
@@ -34,7 +34,7 @@ const MainPage: React.FC = () => {
         />
         <CircleGauge
           size={ circleSize }
-          percent={ 50 }
+          percent={ 90 }
           totalYells={ 15000000 }
           percentageColor='#ff2d55'
           disabledColor='rgba(68, 63, 95, 0.1)'
